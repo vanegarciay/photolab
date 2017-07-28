@@ -3,6 +3,7 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var sass = require('gulp-sass');
 var minifyCSS = require('gulp-minify-css');
+var image = require('gulp-image');
 var webserver = require('gulp-webserver');
 
 gulp.task('script', function(){
@@ -21,7 +22,7 @@ gulp.task('style', function(){
 });
 
 gulp.task('webserver', function(){
-    gulp.src('../gulpie/')
+    gulp.src('../photolab/')
     .pipe(webserver({
         fallback: 'index.html',
         livereload: true,
@@ -30,4 +31,14 @@ gulp.task('webserver', function(){
     }));
 });
 
-gulp.task('default', ['script', 'style', 'webserver']);
+gulp.task('image', function () {
+  gulp.src('assets/img/*')
+    .pipe(image())
+    .pipe(gulp.dest('dist/css/img/'));
+});
+
+gulp.task('watch', function() {
+    gulp.watch('assets/sass/*.scss', ['style']);
+});
+
+gulp.task('default', ['script', 'style', 'webserver', 'image', 'watch']);

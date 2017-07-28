@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.nav {
+    background: transparent;
+    box-shadow: none;
+    position: fixed;
+    margin: 0;
+    font-size: 1.2em;
+    text-transform: uppercase;
+
+    &__option {
+        padding: 3em 1em;
+        list-style: none;
+        display: inline-block;
+        font-weight: bold;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: #eee;
+    }
+}
+
+.intro {
+    background: url('img/bg1.jpg') no-repeat top center;
+    background-size: 100%;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #eee;
+
+    &__title {
+        font-size: 3em;
+        text-transform: uppercase;
+    }
+
+    &__subtitle {
+        clear: both;
+        font-size: 1.3em;
+    }
+}
+
+.represent {
+    background: $gray-background;
+    margin-bottom: -20px;
+
+    &__contenedor {
+        padding-left: 10em !important;
+        padding-top: 3em !important;
+    }
+
+    &__title {
+        color: $main-color;
+        font-size: 2em;
+        text-transform: uppercase;
+    }
+
+    &__imagen {
+        background-size: cover;
+        clip: rect(0 0 60% 0);
+        padding-right: 0;
+    }
+}
+
+.footer {
+    background: $gray-background;
+    
+    &__title {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+
+    &__contenedor {
+        padding: 90px !important;
+    }
+
+
+    &__boton {
+        margin: 50px;
+    }
+}
